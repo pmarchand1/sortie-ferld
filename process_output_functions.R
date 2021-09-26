@@ -20,7 +20,7 @@ library(xml2)
 read_summary_output <- function(file) {
     # "skip" removes a few non-table rows at the beginning of the file
     # it may not always be 5
-    read_tsv(so_file, skip = 5) %>%
+    read_tsv(file, skip = 5) %>%
         # remove columns that represent totals across species
         select(!ends_with("Total:")) %>%
         # This transforms all columns except Step and Subplot to 4 columns:
